@@ -35,8 +35,4 @@ func ServeHTML(w http.ResponseWriter, r *http.Request){
 	// Set the Content-Type header to application/json
 	req.Header.Set("Content-Type", "application/json")
 
-
-	// Print the response status code and status text
-	fmt.Println("Response status:", r.StatusCode, r.Status)
-
 }
