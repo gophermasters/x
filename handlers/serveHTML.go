@@ -23,7 +23,7 @@ func ServeHTML(w http.ResponseWriter, r http.Request){
 	http.ServeFile(w, r, "handlers/templates/bugReports_form.html")
 
 	// Define the JSON payload
-	payload := map[string]string{"bugname: bugname, "description": description, "errorcode": errorcode, "username": username, "imageurl": imageurl }
+	payload := map[string]string{"bugname: bugname, "description": description, "errorcode": errorcode, "username": username, "imageurl": imageurl, }
 
 	// Encode the payload as JSON
 	jsonPayload, err := json.Marshal(payload)
