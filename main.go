@@ -28,6 +28,7 @@ func (s *Server) RunServer() {
 }
 
 func main(){
+	bugsReportServer := NewServer()
 	http.HandleFunc("/", handlers.ServeHTML)
-	RunServer()
+	bugsReportServer.RunServer()
 }
