@@ -9,9 +9,9 @@ import (
 	"github.com/theGOURL/warning"
 )
 
-const API_URL = os.Getenv("API_URI")
+var API_URL = os.Getenv("API_URI")
 
-func ServeHTML(w http.ResponseWriter, r http.Request){
+func ServeHTML(w http.ResponseWriter, r *http.Request){
 	//HTML Req. Var.
 	bugname     := r.PostForm.Get("bugname")
 	description := r.PostForm.Get("description")
@@ -37,6 +37,6 @@ func ServeHTML(w http.ResponseWriter, r http.Request){
 
 
 	// Print the response status code and status text
-	fmt.Println("Response status:", resp.StatusCode, resp.Status)
+	fmt.Println("Response status:", r.StatusCode, r.Status)
 
 }
