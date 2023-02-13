@@ -20,7 +20,7 @@ func NewServer() Server {
 	}
 }
 
-func (s *Server) run() {
+func (s *Server) RunServer() {
 	router := routes.ConfigRoutes(s.server)
 
 	log.Printf("Server running at port: %v", s.port)
@@ -29,5 +29,5 @@ func (s *Server) run() {
 
 func main(){
 	http.HandleFunc("/", handlers.ServeHTML)
-	run()
+	RunServer()
 }
