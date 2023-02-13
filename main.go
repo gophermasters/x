@@ -5,9 +5,8 @@ import (
 	"net/http"
 )
 
-const PORT = os.Getenv("PORT")
 
 func main(){
 	http.HandleFunc("/", handlers.ServeHTML)
-	http.ListenAndServe(PORT, nil)
+	http.ListenAndServe(":10000", nil)
 }
